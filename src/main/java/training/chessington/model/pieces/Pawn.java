@@ -29,6 +29,7 @@ public class Pawn extends AbstractPiece {
 		ArrayList<Move> moves = new ArrayList<>();
 
 		if(from.getRow() !=7 && from.getRow() != 0) {
+			
 			Coordinates to = from.plus(dir, 0);
 
 			if(board.isEmpty(to))
@@ -37,6 +38,9 @@ public class Pawn extends AbstractPiece {
 				if (from.getRow()==origin && board.isEmpty(to.plus(dir,0))) {
 					moves.add(new Move(from, new Coordinates(from.getRow() + (2*dir), from.getCol())));
 				}
+			}
+			if (from.getCol() != 0) {
+				
 			}
 		}
 		return moves;
